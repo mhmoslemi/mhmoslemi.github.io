@@ -30,7 +30,10 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/repositories/";
           },
-        },{id: "news-selected-for-the-outstanding-senior-project-award-in-electrical-engineering-at-sharif-university-recognized-for-raising-the-bar-in-technical-quality-and-creativity",
+        },{id: "news-received-a-bronze-medal-in-the-physics-olympiad",
+          title: 'Received a Bronze Medal in the Physics Olympiad.',
+          description: "",
+          section: "News",},{id: "news-selected-for-the-outstanding-senior-project-award-in-electrical-engineering-at-sharif-university-recognized-for-raising-the-bar-in-technical-quality-and-creativity",
           title: 'Selected for the Outstanding Senior Project Award in Electrical Engineering at Sharif University....',
           description: "",
           section: "News",},{id: "news-admitted-to-the-m-sc-program-in-computer-science-at-western-university",
