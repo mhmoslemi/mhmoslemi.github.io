@@ -4,10 +4,10 @@
     <div
       class="table-responsive"
       {% if include.limit and page.announcements.scrollable and news_size > 3 %}
-        style="max-height: 60vw"
+        style="max-height: 300px; overflow-y: auto;"
       {% endif %}
     >
-      <table class="table table-sm table-borderless">
+      <table class="table table-sm table-borderless" style="border-spacing: 0; border-collapse: collapse;">
         {% assign news = site.news | reverse %}
         {% if include.limit and page.announcements.limit %}
           {% assign news_limit = page.announcements.limit %}
@@ -15,9 +15,9 @@
           {% assign news_limit = news_size %}
         {% endif %}
         {% for item in news limit: news_limit %}
-          <tr>
-            <th scope="row" style="width: 16%">{{ item.date | date: '%b, %Y' }}</th>
-            <td>
+          <tr style="line-height: 1.3;">
+            <th scope="row" style="width: 16%; font-weight: bold; padding: 2px 6px;">{{ item.date | date: '%b, %Y' }}</th>
+            <td style="padding: 2px 6px;">
               {% if item.inline %}
                 {{ item.content | remove: '<p>' | remove: '</p>' | emojify }}
               {% else %}
