@@ -54,6 +54,12 @@ ninja.data = [{
           section: "News",},{id: "news-awarded-western-university-doctoral-excellency-scholarship-cad-160k-for-research-excellence",
           title: 'Awarded Western University Doctoral Excellency Scholarship (CAD 160k) for research excellence.',
           description: "",
+          section: "News",},{id: "news-paper-accepted-to-elsevier-data-amp-amp-knowledge-engineering-heterogeneity-in-entity-matching-a-survey-and-experimental-analysis",
+          title: 'Paper accepted to Elsevier Data &amp;amp;amp; Knowledge Engineering: Heterogeneity in Entity Matching: A...',
+          description: "",
+          section: "News",},{id: "news-started-a-research-internship-at-the-vector-institute-working-with-gautam-kamath-and-yiwei-lu",
+          title: 'Started a research internship at the Vector Institute, working with Gautam Kamath and...',
+          description: "",
           section: "News",},{
         id: 'social-email',
         title: 'email',
