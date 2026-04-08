@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Graduated with a B.Sc. in Electrical Engineering from Sharif University of Technology.
+🎓 Graduated with a B.Sc. in Electrical Engineering from Sharif University of Technology.

@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Received a **Bronze Medal** in the Physics Olympiad.
+🥉 Received a **Bronze Medal** in the Physics Olympiad.

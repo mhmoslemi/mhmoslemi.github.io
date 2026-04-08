@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Paper accepted to **Elsevier Data & Knowledge Engineering**: [Heterogeneity in Entity Matching: A Survey and Experimental Analysis](https://www.sciencedirect.com/journal/data-and-knowledge-engineering)
+📄 Paper accepted to [**Elsevier Data & Knowledge Engineering**](https://www.sciencedirect.com/science/article/pii/S0169023X26000224)!

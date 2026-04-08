@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Our recent work [OTClean](https://dl.acm.org/doi/10.1145/3654963) got accepted at **SIGMOD’24**!
+📄 Paper accepted at [**SIGMOD'24**](https://dl.acm.org/doi/10.1145/3654963)!

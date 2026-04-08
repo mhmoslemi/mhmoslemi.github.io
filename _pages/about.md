@@ -14,17 +14,17 @@ profile:
   # <p>London, ON, Canada</p>
   more_info: >
     <div style="font-size:0.75em;">
-      <p><a href="mailto:mhmoslemi2338@gmail.com">✉️ mhmoslemi2338@gmail.com</a> (primary)</p>
+      <p><a href="mailto:mhmoslemi2338@gmail.com">✉️ mhmoslemi2338@gmail.com</a></p>
       <p><a href="mailto:mohammad.moslemi@uwo.ca">✉️ mohammad.moslemi@uwo.ca</a></p>
     </div>
 
-selected_papers: true # includes a list of papers marked as "selected={true}"
+selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 
 announcements:
   enabled: true # includes a list of news items
   scrollable: true # adds a vertical scroll bar if there are more than 3 news items
-  limit: 5 # leave blank to include all the news in the `_news` folder
+  limit:  # leave blank to include all the news in the `_news` folder
 
 latest_posts:
   enabled: false
@@ -118,12 +118,16 @@ I approach research with an engineering mindset shaped by my undergraduate train
   <!-- I am a PhD student at Western University, jointly in Computer Science (with <a href="https://scholar.google.com/citations?hl=en&user=qAZM5KcAAAAJ&view_op=list_works" target="_blank">Boyu Wang</a>) and Ivey Business School (with <a href="https://scholar.google.com/citations?user=ERQSOF8AAAAJ" target="_blank">Bissan Ghaddar</a>). My research focuses on optimization, distributionally robust optimization (DRO), and their applications in trustworthy ML and quantitative finance. I completed my M.Sc. with <a href="https://www.csd.uwo.ca/~mmilani7/" target="_blank">Mostafa Milani</a> at Western and my B.Sc. in Electrical Engineering at Sharif University of Technology. -->
 
   <p>
-I am a Ph.D. student in Computer Science at the University of Western Ontario, supervised by <a href="https://scholar.google.com/citations?hl=en&user=qAZM5KcAAAAJ&view_op=list_works" target="_blank">Dr. Boyu Wang</a>, <strong>an affiliated faculty member at the Vector Institute</strong>.
+I am a Ph.D. student in Computer Science at the University of Western Ontario, supervised by <a href="https://scholar.google.com/citations?hl=en&user=qAZM5KcAAAAJ&view_op=list_works" target="_blank">Dr. Boyu Wang</a>, an affiliated faculty member at the <strong>Vector Institute</strong>.
   </p>
 
   <p>
-My research focuses on trustworthy machine learning, data-centric AI, and efficient AI. I received my B.Sc. in Electrical Engineering from Sharif University of Technology. Outside of research, I enjoy cycling and running, and I am currently training for an Ironman triathlon. You can find my CV <a href="assets/pdf/CV.pdf" target="_blank">here</a>.
-  </p>
+My research focuses on trustworthy machine learning, data-centric AI, and efficient AI. 
+</p>
+
+<p>
+I received my B.Sc. in Electrical Engineering from Sharif University of Technology. Outside of research, I enjoy cycling and running, and I am currently training for an Ironman triathlon. You can find my CV <a href="assets/pdf/CV.pdf" target="_blank">here</a>.
+</p>
 
 <!-- In my free time, I train for <a href="https://en.wikipedia.org/wiki/Ironman_Triathlon" target="_blank">triathlon</a> and am currently preparing for Ottawa Ironman in August 2026. Here is also my <a href="assets/pdf/CV.pdf" target="_blank">CV</a>. -->
 
@@ -139,7 +143,6 @@ My research focuses on trustworthy machine learning, data-centric AI, and effici
 
 
 
-  </p>
 <!-- 
   <p>
     I completed my M.Sc. in Computer Science at Western University under the supervision of <a href="https://www.csd.uwo.ca/~mmilani7/" target="_blank">Dr. Mostafa Milani</a>, specializing in fairness in data integration and data cleaning. I applied techniques from optimal transport, causality, and optimization to design methods that improve equity and performance in data systems. My work has been published at top venues including SIGMOD and IEEE BigData. I have also contributed to interdisciplinary projects in the Economics Department at Huron College with <a href="https://www.samirahasanzadeh.com/" target="_blank">Dr. Samira Hasanzadeh</a>. For more details, see my <a href="assets/pdf/CV.pdf" target="_blank">full CV</a> or <a href="assets/pdf/RD_CV.pdf" target="_blank">short CV</a>.
