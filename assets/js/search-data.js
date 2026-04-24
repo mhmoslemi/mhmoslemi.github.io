@@ -23,6 +23,13 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/repositories/";
           },
+        },{id: "nav-misc",
+          title: "misc",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/misc/";
+          },
         },{id: "news-received-a-bronze-medal-in-the-physics-olympiad",
           title: '🥉 Received a Bronze Medal in the Physics Olympiad.',
           description: "",
