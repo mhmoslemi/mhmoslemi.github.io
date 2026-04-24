@@ -7,7 +7,6 @@ first_name: Mohammad
 middle_name: Hossein
 last_name: Moslemi
 contact_note: >
-  Feel free to reach out, but the best way to contact me is via LinkedIn DM.
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
 footer_text: >
 keywords: Trustworthy ML, AI Ethics, Data Cleaning, Research
