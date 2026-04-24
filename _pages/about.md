@@ -6,7 +6,7 @@ subtitle: PhD student in <a href='https://www.uwo.ca/index.html'>Computer Scienc
 
 profile:
   align: right
-  image: prof_pic.jpg
+  image: IMG_7580.png
   image_circular: false # crops the image to make it circular
   # more_info: >
   # <p><a href="mailto:mhmoslemi2338@gmail.com">✉️ mhmoslemi2338@gmail.com</a></p>
