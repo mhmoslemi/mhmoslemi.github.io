@@ -1,8 +1,13 @@
 # _data/venue.yml
+ICML:
+  label: "ICML"
+  url:   "https://icml.cc/"
+  color: "#E87722"     # ICML orange
+
 SIGMOD:
   label: "SIGMOD"
   url:   "https://2024.sigmod.org/"
-  color: "#C41E3A"     # ACM / SIGMOD red
+  color: "#C41E3A"     # ACM red
 
 GUIDE-AI:
   label: "GUIDE-AI"
@@ -14,11 +19,16 @@ IEEEBigData:
   url:   "https://bigdataieee.org/"
   color: "#00629B"     # IEEE blue
 
+DKE:
+  label: "DKE"
+  url:   "https://www.sciencedirect.com/journal/data-and-knowledge-engineering"
+  color: "#2E8B57"     # sea green
+
 Preprint:
   label: "Preprint"
   color: "#adb5bd"     # neutral grey
 
 
 Thesis:
-  label: "M.Sc. Thesis"
-  color: "#a286e0"   # Indigo (Bootstrap “primary indigo”)
+  label: “Thesis”
+  color: “#adb5bd”     # neutral grey

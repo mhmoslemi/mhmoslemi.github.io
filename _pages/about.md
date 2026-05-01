@@ -126,7 +126,7 @@ My research focuses on trustworthy machine learning, data-centric AI, and effici
 </p>
 
 <p>
-I received my B.Sc. in Electrical Engineering from Sharif University of Technology. Outside of research, I enjoy cycling and running, and I am currently training for an Ironman triathlon. You can find my CV <a href="assets/pdf/CV.pdf" target="_blank">here</a>.
+I received my B.Sc. in Electrical Engineering from Sharif University of Technology. Outside of research, I enjoy cycling and running, and I am currently training for an Ironman triathlon. You can find my CV <a href="assets/pdf/cv.pdf" target="_blank">here</a>.
 </p>
 
 <!-- In my free time, I train for <a href="https://en.wikipedia.org/wiki/Ironman_Triathlon" target="_blank">triathlon</a> and am currently preparing for Ottawa Ironman in August 2026. Here is also my <a href="assets/pdf/CV.pdf" target="_blank">CV</a>. -->
