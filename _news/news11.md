@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-📄 Paper accepted to [**ICML 2026**](https://icml.cc/)!
+📄 Paper accepted to [**ICML 2026**](https://arxiv.org/abs/2605.00185)!
