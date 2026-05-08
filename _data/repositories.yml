@@ -1,10 +1,10 @@
 github_users:
-  - mhmoslemi2338
+  - mhmoslemi
 
 repo_description_lines_max: 1
 
 github_repos:
-  - mhmoslemi2338/pre-EM-bias
-  - mhmoslemi2338/Heterogeneity_EM_Survey
-  - mhmoslemi2338/sigmod-FAIR-EM-post-process
-  - mhmoslemi2338/CaliFair-EM
+  - mhmoslemi/pre-EM-bias
+  - mhmoslemi/Heterogeneity_EM_Survey
+  - mhmoslemi/sigmod-FAIR-EM-post-process
+  - mhmoslemi/CaliFair-EM
