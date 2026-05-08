@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://mhmoslemi2338.github.io/sitemap.xml
+Sitemap: https://mhmoslemi.github.io/sitemap.xml
