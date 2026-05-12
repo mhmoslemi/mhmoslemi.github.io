@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-🤖 Started a research internship at [**Huawei Noah's Ark Lab**](https://noahlab.com.hk/en), working on Agentic AI.
+<img src="/assets/img/huawei_logo.svg" style="height:1.2em; vertical-align:middle; margin-right:4px;"> Started a research internship at [**Huawei Noah's Ark Lab**](https://noahlab.com.hk/en), working on Agentic AI.

@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-🎓 Defended my M.Sc. thesis: [Fairness in Entity Matching and Blocking](https://ir.lib.uwo.ca/etd/10776/) at Western University.
+🎓 Defended my M.Sc. [thesis](https://ir.lib.uwo.ca/etd/10776/) at University of Western Ontario, Canada.
