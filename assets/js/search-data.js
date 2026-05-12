@@ -56,6 +56,9 @@ ninja.data = [{
           section: "News",},{id: "news-paper-accepted-to-icml-2026",
           title: '📄 Paper accepted to ICML 2026!',
           description: "",
+          section: "News",},{id: "news-started-a-research-internship-at-huawei-noah-s-ark-lab-working-on-agentic-ai",
+          title: '🤖 Started a research internship at Huawei Noah’s Ark Lab, working on Agentic...',
+          description: "",
           section: "News",},{
         id: 'social-email',
         title: 'email',
