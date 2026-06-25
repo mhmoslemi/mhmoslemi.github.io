@@ -2,7 +2,9 @@
 layout: about
 title: about
 permalink: /
-subtitle: PhD student in <a href='https://www.uwo.ca/index.html'>Computer Science</a> and <a href='https://www.ivey.uwo.ca/'>Ivey Business School</a> at Western University
+subtitle: 
+# PhD student in <a href='https://www.uwo.ca/index.html'>Computer Science</a> and <a href='https://www.ivey.uwo.ca/'>Ivey Business School</a> at Western University
+# subtitle: PhD student in <a href='https://www.uwo.ca/index.html'>Computer Science</a> and <a href='https://www.ivey.uwo.ca/'>Ivey Business School</a> at Western University
 
 profile:
   align: right
@@ -117,16 +119,16 @@ I approach research with an engineering mindset shaped by my undergraduate train
 
   <!-- I am a PhD student at Western University, jointly in Computer Science (with <a href="https://scholar.google.com/citations?hl=en&user=qAZM5KcAAAAJ&view_op=list_works" target="_blank">Boyu Wang</a>) and Ivey Business School (with <a href="https://scholar.google.com/citations?user=ERQSOF8AAAAJ" target="_blank">Bissan Ghaddar</a>). My research focuses on optimization, distributionally robust optimization (DRO), and their applications in trustworthy ML and quantitative finance. I completed my M.Sc. with <a href="https://www.csd.uwo.ca/~mmilani7/" target="_blank">Mostafa Milani</a> at Western and my B.Sc. in Electrical Engineering at Sharif University of Technology. -->
 
-  <p>
-I am a Ph.D. student in Computer Science at the University of Western Ontario, supervised by <a href="https://scholar.google.com/citations?hl=en&user=qAZM5KcAAAAJ&view_op=list_works" target="_blank">Dr. Boyu Wang</a>, an affiliated faculty member at the <strong>Vector Institute</strong>.
-  </p>
-
-  <p>
-My research focuses on trustworthy machine learning, data-centric AI, and efficient AI. 
+<p>
+ML researcher at Huawei Canada and Ph.D. student in Computer Science at Western Ontario University, supervised by <a href="https://scholar.google.com/citations?hl=en&user=qAZM5KcAAAAJ&view_op=list_works" target="_blank">Dr. Boyu Wang</a>, a <strong>Vector Institute</strong>-affiliated faculty member.
 </p>
 
 <p>
-I received my B.Sc. in Electrical Engineering from Sharif University of Technology. Outside of research, I enjoy cycling and running, and I am currently training for an Ironman triathlon. You can find my CV <a href="assets/pdf/cv.pdf" target="_blank">here</a>.
+I am currently focused on agentic AI scientific discovery. I have recently worked on adversarial attacks and other trustworthy ML topics such as fairness in synthetic data generation.
+</p>
+
+<p>
+I received my B.Sc. in Electrical Engineering from Sharif University of Technology. Outside of research, I am a triathlete.
 </p>
 
 <!-- In my free time, I train for <a href="https://en.wikipedia.org/wiki/Ironman_Triathlon" target="_blank">triathlon</a> and am currently preparing for Ottawa Ironman in August 2026. Here is also my <a href="assets/pdf/CV.pdf" target="_blank">CV</a>. -->
