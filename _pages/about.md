@@ -120,11 +120,11 @@ I approach research with an engineering mindset shaped by my undergraduate train
   <!-- I am a PhD student at Western University, jointly in Computer Science (with <a href="https://scholar.google.com/citations?hl=en&user=qAZM5KcAAAAJ&view_op=list_works" target="_blank">Boyu Wang</a>) and Ivey Business School (with <a href="https://scholar.google.com/citations?user=ERQSOF8AAAAJ" target="_blank">Bissan Ghaddar</a>). My research focuses on optimization, distributionally robust optimization (DRO), and their applications in trustworthy ML and quantitative finance. I completed my M.Sc. with <a href="https://www.csd.uwo.ca/~mmilani7/" target="_blank">Mostafa Milani</a> at Western and my B.Sc. in Electrical Engineering at Sharif University of Technology. -->
 
 <p>
-ML researcher at Huawei Canada and Ph.D. student in Computer Science at Western Ontario University, supervised by <a href="https://scholar.google.com/citations?hl=en&user=qAZM5KcAAAAJ&view_op=list_works" target="_blank">Dr. Boyu Wang</a>, a <strong>Vector Institute</strong>-affiliated faculty member.
+ML researcher at Huawei Canada and Ph.D. student in Computer Science at Western Ontario University, supervised by <a href="https://scholar.google.com/citations?hl=en&user=qAZM5KcAAAAJ&view_op=list_works" target="_blank">Dr. Boyu Wang</a> (Vector Institute affiliate faculty).
 </p>
 
 <p>
-I am currently focused on agentic AI scientific discovery. I have recently worked on adversarial attacks and other trustworthy ML topics such as fairness in synthetic data generation.
+I am currently focused on agentic AI scientific discovery. Recently worked on adversarial attacks and other trustworthy ML topics such as fairness in synthetic data generation.
 </p>
 
 <p>
