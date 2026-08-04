@@ -59,6 +59,9 @@ ninja.data = [{
           section: "News",},{id: "news-started-a-research-internship-at-huawei-noah-s-ark-lab-working-on-agentic-ai",
           title: 'Started a research internship at Huawei Noah’s Ark Lab, working on Agentic AI....',
           description: "",
+          section: "News",},{id: "news-became-the-youngest-iranian-in-history-to-complete-a-full-distance-ironman-finishing-in-11-48-18-with-a-sub-4-hour-marathon-on-my-debut",
+          title: 'Became the youngest Iranian in history to complete a full-distance IRONMAN, finishing in...',
+          description: "",
           section: "News",},{
         id: 'social-email',
         title: 'email',
