@@ -68,6 +68,8 @@
       <a href="https://stackoverflow.com/users/{{ social[1] }}" title="Stackoverflow"><i class="fa-brands fa-stack-overflow"></i></a>
     {% when 'strava_userid' %}
       <a href="https://www.strava.com/athletes/{{ social[1] }}" title="Strava"><i class="fa-brands fa-strava"></i></a>
+    {% when 'strava_url' %}
+      <a href="{{ social[1] }}" title="Strava"><i class="fa-brands fa-strava"></i></a>
     {% when 'telegram_username' %}
       <a href="https://telegram.me/{{ social[1] }}" title="telegram"><i class="fa-brands fa-telegram"></i></a>
     {% when 'unsplash_id' %}
