@@ -84,18 +84,18 @@ ninja.data = [{
           window.open("https://www.linkedin.com/in/mohammad-hosein-moslemi", "_blank");
         },
       },{
-        id: 'social-orcid',
-        title: 'ORCID',
-        section: 'Socials',
-        handler: () => {
-          window.open("https://orcid.org/0009-0002-0278-4665# your ORCID ID", "_blank");
-        },
-      },{
         id: 'social-scholar',
         title: 'Google Scholar',
         section: 'Socials',
         handler: () => {
           window.open("https://scholar.google.com/citations?user=vfufSS0AAAAJ", "_blank");
+        },
+      },{
+        id: 'social-strava',
+        title: 'Strava',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://www.strava.com/athletes/131183274", "_blank");
         },
       },{
       id: 'light-theme',
