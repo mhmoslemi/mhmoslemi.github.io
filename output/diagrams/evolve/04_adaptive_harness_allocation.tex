@@ -1,0 +1,68 @@
+\begin{tikzpicture}[
+  x=1cm,
+  y=1cm,
+  font=\sffamily\scriptsize,
+  box/.style={draw, rounded corners=2pt, thick, align=center, minimum height=9mm, inner sep=3pt, fill=white},
+  state/.style={box, draw=blue!65!black, fill=blue!6},
+  harness/.style={box, draw=violet!65!black, fill=violet!7},
+  trial/.style={harness, dashed},
+  control/.style={box, draw=violet!70!black, fill=violet!5},
+  branch/.style={box, draw=orange!75!black, fill=orange!8},
+  verify/.style={box, draw=green!55!black, fill=green!8},
+  evidence/.style={box, draw=green!55!black, fill=green!5},
+  neutral/.style={box, draw=black!55, fill=black!3},
+  gate/.style={circle, draw=violet!70!black, thick, fill=violet!7, minimum size=8mm, inner sep=1pt},
+  flow/.style={-{Latex[length=2mm]}, thick},
+  auditflow/.style={-{Latex[length=2mm]}, thick, draw=violet!75!black},
+  nextflow/.style={-{Latex[length=2mm]}, thick, dashed, draw=black!60},
+  note/.style={font=\sffamily\tiny, align=center, text=black!70}
+]
+
+\node[state, text width=33mm] (context) at (-7.60,0.80) {Scientific context\\cells \quad roles \quad options\\horizon and cost menu};
+\node[harness, text width=33mm] (registry) at (-7.60,-0.90) {Versioned harness registry\\stable $h_1^{(3)}$ \quad stable $h_2^{(5)}$\\trial $h_3^{(1)}$};
+
+\node[control, text width=35mm, minimum height=15mm] (builder) at (-3.60,0) {Arm constructor\\$r=(c,a,o,h_v,H,C)$};
+\draw[flow] (context.east) -- ([yshift=4mm]builder.west);
+\draw[flow] (registry.east) -- ([yshift=-4mm]builder.west);
+
+\node[control, text width=42mm, minimum height=20mm] (posterior) at (1.20,0) {Joint outcome posterior\\admission probability\\admitted upper tail\\dependence between arms};
+\draw[flow] (builder.east) -- (posterior.west);
+
+\node[neutral, draw=yellow!65!black, fill=yellow!12, text width=34mm] (record) at (4.00,2.00) {Current verified record $M_t$};
+\node[neutral, text width=39mm] (quotas) at (8.10,2.00) {Reserved support\\audit \quad coverage\\roles \quad harness trials};
+\node[control, text width=43mm, minimum height=20mm] (optimizer) at (6.10,0) {Budgeted portfolio selection\\maximize posterior record improvement\\under remaining cost};
+\draw[flow] (posterior.east) -- (optimizer.west);
+\draw[flow] (record.south) -- ([xshift=-7mm]optimizer.north);
+\draw[flow] (quotas.south) -- ([xshift=7mm]optimizer.north);
+
+\node[branch, text width=38mm, minimum height=25mm] (portfolio) at (-3.60,-2.80) {Selected portfolio $S_t$\\$r_1$ with $h_1^{(3)}$ locked\\$r_2$ with $h_2^{(5)}$ locked\\$r_3$ with trial $h_3^{(1)}$ locked};
+\coordinate (selectrail) at ([yshift=-2.5mm]optimizer.south);
+\coordinate (selectdrop) at (portfolio.north |- selectrail);
+\draw[flow] (optimizer.south) -- (selectrail)
+  -- node[note, pos=.20, below=1pt, fill=white, inner sep=1pt] {selected arms}
+  (selectdrop) -- (portfolio.north);
+
+\node[branch, text width=32mm, minimum height=15mm] (execution) at (0.80,-2.80) {Locked branch execution\\one version for the branch lifetime};
+\node[verify, text width=34mm, minimum height=20mm] (verifier) at (4.70,-2.80) {Fixed external verifier\\same admission rule\\for every harness};
+\draw[flow] (portfolio.east) -- (execution.west);
+\draw[flow] (execution.east) -- (verifier.west);
+
+\node[evidence, text width=36mm] (production) at (2.20,-4.75) {Production evidence\\absolute record value};
+\node[evidence, draw=violet!65!black, fill=violet!6, text width=36mm] (audit) at (7.00,-4.75) {Matched harness audit\\contextual difference};
+\draw[flow] ([xshift=-5mm]verifier.south) -- ++(0,-0.15) -| (production.north);
+\draw[auditflow] ([xshift=5mm]verifier.south) -- ++(0,-0.15) -| (audit.north);
+
+\node[control, text width=34mm] (nextposterior) at (2.20,-6.35) {Tail posterior update\\next epoch};
+\node[harness, text width=34mm] (effect) at (7.00,-6.35) {Harness effect record\\next epoch};
+\draw[nextflow] (production.south) -- (nextposterior.north);
+\draw[nextflow] (audit.south) -- (effect.north);
+
+\node[gate] (versiongate) at (4.60,-5.90) {$\Delta h$};
+\node[trial, text width=36mm] (newversion) at (4.60,-7.45) {New trial version $h_3^{(2)}$\\joins the next epoch};
+\draw[nextflow] (production.south east) -- (versiongate.north west);
+\draw[nextflow] (audit.south west) -- (versiongate.north east);
+\draw[nextflow] (versiongate.south) -- (newversion.north);
+
+\node[neutral, text width=170mm, minimum height=14mm] (rule) at (1.00,-8.90) {Adaptation occurs only between branches\\Harness versions remain locked within every active branch\\All comparisons use the same external verifier};
+
+\end{tikzpicture}

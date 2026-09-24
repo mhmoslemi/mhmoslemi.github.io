@@ -1,0 +1,92 @@
+\begin{tikzpicture}[
+  x=1cm,
+  y=1cm,
+  font=\sffamily\scriptsize,
+  box/.style={rounded corners=3pt, align=center, minimum height=1.05cm,
+    text width=2.15cm, inner sep=3pt, line width=0.55pt},
+  smallbox/.style={rounded corners=2pt, align=center, minimum height=0.72cm,
+    text width=1.55cm, inner sep=2pt, line width=0.5pt},
+  flow/.style={-{Latex[length=1.6mm,width=1.15mm]}, draw=linegray, line width=0.7pt},
+  audit/.style={-{Latex[length=1.6mm,width=1.15mm]}, draw=auditpurple, densely dashed, line width=0.75pt},
+  update/.style={-{Latex[length=1.6mm,width=1.15mm]}, draw=memorygreen!90!black, densely dashed, line width=0.75pt}
+]
+
+\node[box, draw=searchblue!80!black, fill=statefill, text=searchblue!90!black,
+  font=\sffamily\scriptsize\bfseries] (archive) at (0.7,4.45)
+  {Verified quality diversity archive\\deep scientific state cells};
+
+\node[box, draw=searchblue!80!black, fill=searchblue!10, text=searchblue!90!black,
+  font=\sffamily\scriptsize\bfseries] (allocator) at (3.65,4.45)
+  {Record\\improvement\\allocator\\state option\\harness arm};
+
+\node[draw=policyteal!75!black, fill=policyteal!8, rounded corners=5pt,
+  minimum width=5.45cm, minimum height=2.22cm] (ecology) at (7.55,4.45) {};
+\node[font=\sffamily\scriptsize\bfseries, text=policyteal!85!black]
+  at (7.55,5.18) {State isolated three agent ecology};
+\node[smallbox, draw=policyteal!70!black, fill=white] (scout) at (5.95,4.30)
+  {Scout\\new option families};
+\node[smallbox, draw=policyteal!70!black, fill=white] (mechanist) at (7.55,4.30)
+  {Mechanist\\targeted interventions};
+\node[smallbox, draw=policyteal!70!black, fill=white] (challenger) at (9.15,4.30)
+  {Challenger\\counterfactual probes};
+
+\node[box, draw=verifyred!85!black, fill=rlfill, text=verifyred!90!black,
+  font=\sffamily\scriptsize\bfseries] (verifier) at (12.05,4.45)
+  {Independent verifier stack\\admission robustness and blinded audit};
+
+\draw[flow] (archive.east) -- (allocator.west);
+\draw[flow] (allocator.east) -- (ecology.west);
+\draw[flow] (ecology.east) -- (verifier.west);
+
+\coordinate (topright) at (12.05,6.12);
+\coordinate (topleft) at (0.70,6.12);
+\draw[draw=linegray, line width=0.7pt] (verifier.north) -- (topright) -- (topleft)
+  node[midway, above, font=\sffamily\tiny, text=linegray]
+  {confirmed scientific states and immutable evidence packets};
+\draw[flow] (topleft) -- (archive.north);
+
+\node[box, draw=harnessorange!85!black, fill=harnessorange!10,
+  text=harnessorange!55!black] (harness) at (1.05,1.72)
+  {Harness portfolio\\archive view\\context routing\\depth and audit\\schedule};
+\draw[flow] (harness.north) |- (allocator.south);
+
+\node[draw=auditpurple!80!black, fill=auditpurple!8, rounded corners=5pt,
+  minimum width=4.75cm, minimum height=1.92cm] (forkbg) at (5.30,1.72) {};
+\node[font=\sffamily\scriptsize\bfseries, text=auditpurple!85!black, align=center]
+  at (5.30,2.37) {Permanent randomized\\audit channel};
+\node[smallbox, draw=auditpurple!70!black, fill=white] (optionfork) at (4.35,1.55)
+  {Option fork\\fixed cost and horizon};
+\node[smallbox, draw=auditpurple!70!black, fill=white] (nullfork) at (6.25,1.55)
+  {Null fork\\matched frozen branch};
+\node[font=\sffamily\tiny, text=linegray] at (5.30,0.92)
+  {Known propensities and no cross branch updates};
+\draw[audit] (allocator.south) -- (forkbg.north);
+\draw[audit] (forkbg.east) -| node[pos=0.60, below, font=\sffamily\tiny]
+  {verified descendant maxima} (verifier.south);
+
+\node[box, draw=memorygreen!80!black, fill=memoryfill,
+  text=memorygreen!80!black, text width=2.35cm] (memory) at (8.90,1.72)
+  {Causal option\\registry\\matched horizon\\uplift and uncertainty};
+\draw[update] (forkbg.east) -- (memory.west);
+\draw[update] (memory.north) |- (allocator.south east);
+
+\node[draw=verifyred!80!black, fill=rlfill, rounded corners=5pt,
+  minimum width=3.10cm, minimum height=1.92cm] (nurserybg) at (12.05,1.72) {};
+\node[font=\sffamily\scriptsize\bfseries, text=verifyred!90!black, align=center]
+  at (12.05,2.36) {Bounded refinement\\nursery};
+\node[font=\sffamily\tiny, align=center, text=linegray] at (12.05,1.57)
+  {Minimal counterfactual\\one to three attempts\\hard cost and depth caps};
+\draw[flow] (verifier.south) -- (nurserybg.north);
+\draw[flow] (nurserybg.east) -- ++(0.55,0) |- (verifier.east);
+
+\node[draw=memorygreen!80!black, fill=memorygreen!7, rounded corners=3pt,
+  align=center, text=memorygreen!80!black, text width=5.10cm,
+  minimum height=0.72cm, inner sep=2pt] (learning) at (8.45,-0.20)
+  {Homogeneous Top M at K learning\\OrderGrad or MaxPO on verified branches\\separate role updates with no gradient merging};
+\draw[update] (verifier.south west) |- (learning.east);
+\draw[update] (learning.north) -- ++(0,0.40) -| (ecology.south);
+
+\node[font=\sffamily\tiny, text=linegray, align=center] at (2.55,-0.20)
+  {Hard quotas preserve audit support\\under tested cells and stepping stones};
+
+\end{tikzpicture}

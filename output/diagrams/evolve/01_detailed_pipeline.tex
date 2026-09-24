@@ -1,0 +1,91 @@
+\begin{tikzpicture}[
+  x=1cm,
+  y=1cm,
+  font=\sffamily\scriptsize,
+  box/.style={draw, rounded corners=2pt, thick, align=center, minimum height=8mm, fill=white},
+  state/.style={box, draw=blue!65!black, fill=blue!6},
+  control/.style={box, draw=violet!65!black, fill=violet!7},
+  role/.style={box, draw=teal!65!black, fill=teal!7},
+  branch/.style={box, draw=orange!75!black, fill=orange!8},
+  verify/.style={box, draw=green!55!black, fill=green!8},
+  memory/.style={box, draw=green!45!black, fill=green!5},
+  update/.style={box, draw=cyan!55!black, fill=cyan!6},
+  refine/.style={box, draw=orange!85!black, fill=orange!13},
+  neutral/.style={box, draw=black!55, fill=black!3},
+  flow/.style={-{Latex[length=2mm]}, thick},
+  auditflow/.style={-{Latex[length=2mm]}, thick, draw=violet!75!black},
+  nextflow/.style={-{Latex[length=2mm]}, thick, dashed, draw=black!60},
+  smalllabel/.style={font=\sffamily\tiny, align=center, text=black!75}
+]
+
+\node[state, minimum width=35mm] (archive) at (-4.8,0) {Verified scientific archive\\quality states \quad stepping stones};
+\node[memory, minimum width=35mm] (registry) at (0,0) {Promoted causal option records\\contextual effect evidence};
+\node[control, minimum width=35mm] (harnesses) at (4.8,0) {Versioned harness pool\\stable and trial versions};
+
+\node[control, minimum width=83mm] (builder) at (0,-1.55) {Allocation arm builder\\$r=(c,a,o,h_v,H,C)$};
+\draw[flow] (archive) -- (builder);
+\draw[flow] (registry) -- (builder);
+\draw[flow] (harnesses) -- (builder);
+
+\node[control, minimum width=103mm, minimum height=14mm] (scheduler) at (0,-3.15) {Budgeted posterior controller\\audit support \quad cell coverage\\role and harness support \quad record-improvement portfolio};
+\draw[flow] (builder) -- (scheduler);
+
+\node[role, minimum width=33mm] (scout) at (-4.2,-4.75) {Scout LoRA branch\\new regions and options};
+\node[role, minimum width=33mm] (mechanist) at (0,-4.75) {Mechanist LoRA branch\\mechanisms and constraints};
+\node[role, minimum width=33mm] (challenger) at (4.2,-4.75) {Challenger LoRA branch\\counterexamples and tests};
+\draw[flow] (scheduler) -- (scout);
+\draw[flow] (scheduler) -- (mechanist);
+\draw[flow] (scheduler) -- (challenger);
+
+\node[neutral, minimum width=64mm, minimum height=10mm] (dispatch) at (0,-5.95) {Role-isolated branch executor\\one frozen role checkpoint per branch};
+\draw[flow] (scout) -- (dispatch);
+\draw[flow] (mechanist) -- (dispatch);
+\draw[flow] (challenger) -- (dispatch);
+
+\node[branch, minimum width=39mm] (production) at (-3.1,-7.15) {Production branches\\seek a new verified record};
+\node[branch, minimum width=50mm, draw=violet!70!black, fill=violet!6] (audit) at (3.1,-7.15) {Randomized audit pairs\\tested option \quad matched continuation};
+\draw[flow] (dispatch) -- (production);
+\draw[auditflow] (dispatch) -- (audit);
+
+\node[verify, minimum width=90mm, minimum height=15mm] (verifier) at (0,-8.75) {Common independent verifier\\admissibility \quad scientific measure \quad perturbations\\replication \quad blinded checks};
+\draw[flow] (production) -- node[smalllabel, left] {closed production evidence} (verifier);
+\draw[auditflow] (audit) -- node[smalllabel, right] {paired audit evidence} (verifier);
+
+\node[state, minimum width=27mm] (archiveupdate) at (-5.1,-10.75) {Archive and\\record update};
+\node[control, minimum width=27mm] (posterior) at (-1.7,-10.75) {Tail posterior\\update};
+\node[memory, minimum width=27mm] (memoryupdate) at (1.7,-10.75) {Causal option\\memory update};
+\node[update, minimum width=27mm] (groups) at (5.1,-10.75) {Homogeneous\\learning groups};
+
+\draw[flow] (verifier.south west) --
+  node[smalllabel, pos=.42, below, sloped, inner sep=.7pt]
+       {admitted\\states}
+  (archiveupdate.north east);
+\draw[flow] (verifier.south) -- node[smalllabel, pos=.58, above, sloped, fill=white, inner sep=1pt] {production} (posterior.north);
+\draw[auditflow] (verifier.south) -- node[smalllabel, pos=.58, above, sloped, fill=white, inner sep=1pt] {paired effects} (memoryupdate.north);
+\draw[flow] (verifier.south east) -- node[smalllabel, pos=.62, above, sloped, fill=white, inner sep=1pt] {role data} (groups.north west);
+
+\node[refine, minimum width=42mm] (provisional) at (8.15,-8.55) {Provisional candidate\\with actionable diagnosis};
+\node[refine, minimum width=42mm] (refinement) at (8.15,-9.70) {Matched nursery allocation\\refinement versus fresh continuation};
+\draw[flow, draw=orange!80!black] (verifier.east) -- (provisional.west);
+\draw[flow, draw=orange!80!black] (provisional) -- (refinement);
+\coordinate (reverifyout) at ([xshift=-1mm]refinement.west);
+\draw[flow, draw=orange!80!black]
+  (refinement.west) -- (reverifyout)
+  |- ([yshift=-3.2mm]verifier.east);
+\node[smalllabel, anchor=north east, fill=white, inner sep=.7pt]
+  at (5.80,-9.16) {blinded\\re-verification};
+
+\node[update, minimum width=42mm] (loraupdate) at (5.1,-12.15) {Role-specific LoRA update\\shared backbone remains frozen};
+\draw[flow] (groups) -- (loraupdate);
+
+\node[neutral, minimum width=111mm, minimum height=10mm] (barrier) at (0,-13.6) {Synchronization barrier\\verified updates enter the next epoch};
+\draw[nextflow] (archiveupdate) -- (barrier);
+\draw[nextflow] (posterior) -- (barrier);
+\draw[nextflow] (memoryupdate) -- (barrier);
+\draw[nextflow] (loraupdate) -- (barrier);
+
+\node[font=\sffamily\tiny\bfseries, text=black!75, anchor=west]
+  at (-6.55,0.72) {Inputs available at the start of an epoch};
+\node[font=\sffamily\tiny\bfseries, text=black!75, anchor=west]
+  at (-5.85,-4.15) {Parallel role execution};
+\end{tikzpicture}

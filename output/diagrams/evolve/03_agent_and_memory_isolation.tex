@@ -1,0 +1,66 @@
+\begin{tikzpicture}[
+  x=1cm,
+  y=1cm,
+  font=\sffamily\scriptsize,
+  shared/.style={draw=black!60, thick, rounded corners=2pt, fill=black!4, minimum height=8mm, align=center},
+  rolebox/.style={draw=teal!65!black, thick, rounded corners=2pt, fill=teal!7, minimum width=34mm, minimum height=8mm, align=center},
+  private/.style={draw=teal!55!black, thick, rounded corners=2pt, fill=white, minimum width=34mm, minimum height=7mm, align=center},
+  verify/.style={draw=green!55!black, thick, rounded corners=2pt, fill=green!7, minimum height=9mm, align=center},
+  update/.style={draw=cyan!55!black, thick, rounded corners=2pt, fill=cyan!7, minimum width=34mm, minimum height=9mm, align=center},
+  barrier/.style={draw=violet!60!black, thick, rounded corners=2pt, fill=violet!6, minimum height=8mm, align=center},
+  flow/.style={-{Latex[length=2mm]}, thick},
+  evidence/.style={-{Latex[length=2mm]}, thick, draw=green!55!black},
+  note/.style={font=\sffamily\tiny, align=center, text=black!70}
+]
+
+\node[shared, minimum width=115mm] (backbone) at (0,0) {Frozen foundation model \quad read only for the full discovery run};
+\node[shared, minimum width=115mm] (public) at (0,-1.15) {Verified shared layer \quad scientific archive \quad promoted causal options \quad versioned harnesses};
+
+\node[font=\sffamily\small\bfseries, text=teal!70!black] at (-4.0,-2.25) {Scout};
+\node[font=\sffamily\small\bfseries, text=teal!70!black] at (0,-2.25) {Mechanist};
+\node[font=\sffamily\small\bfseries, text=teal!70!black] at (4.0,-2.25) {Challenger};
+
+\node[rolebox] (slora) at (-4.0,-3.05) {Scout LoRA\\private optimizer};
+\node[rolebox] (mlora) at (0,-3.05) {Mechanist LoRA\\private optimizer};
+\node[rolebox] (clora) at (4.0,-3.05) {Challenger LoRA\\private optimizer};
+
+\node[private] (smemory) at (-4.0,-4.15) {Private working memory\\and random stream};
+\node[private] (mmemory) at (0,-4.15) {Private working memory\\and random stream};
+\node[private] (cmemory) at (4.0,-4.15) {Private working memory\\and random stream};
+
+\node[private] (sretrieval) at (-4.0,-5.25) {Role retrieval view\\verified packets only};
+\node[private] (mretrieval) at (0,-5.25) {Role retrieval view\\verified packets only};
+\node[private] (cretrieval) at (4.0,-5.25) {Role retrieval view\\verified packets only};
+
+\node[rolebox] (sbranch) at (-4.0,-6.4) {Scout option branches\\raw transcript stays here};
+\node[rolebox] (mbranch) at (0,-6.4) {Mechanist option branches\\raw transcript stays here};
+\node[rolebox] (cbranch) at (4.0,-6.4) {Challenger option branches\\raw transcript stays here};
+
+\draw[flow] (slora) -- (smemory);
+\draw[flow] (smemory) -- (sretrieval);
+\draw[flow] (sretrieval) -- (sbranch);
+\draw[flow] (mlora) -- (mmemory);
+\draw[flow] (mmemory) -- (mretrieval);
+\draw[flow] (mretrieval) -- (mbranch);
+\draw[flow] (clora) -- (cmemory);
+\draw[flow] (cmemory) -- (cretrieval);
+\draw[flow] (cretrieval) -- (cbranch);
+
+\node[verify, minimum width=115mm] (verifier) at (0,-7.85) {Common independent verifier \quad same admission rule and scientific measure for every role};
+\draw[flow] (sbranch.south) -- ([xshift=-40mm]verifier.north);
+\draw[flow] (mbranch.south) -- (verifier.north);
+\draw[flow] (cbranch.south) -- ([xshift=40mm]verifier.north);
+
+\node[barrier, minimum width=115mm] (barrier) at (0,-9.05) {Synchronization barrier \quad immutable verified packets cross role boundaries};
+\draw[evidence] (verifier) -- (barrier);
+
+\node[update] (supdate) at (-4.0,-10.35) {Scout verified group\\updates Scout LoRA};
+\node[update] (mupdate) at (0,-10.35) {Mechanist verified group\\updates Mechanist LoRA};
+\node[update] (cupdate) at (4.0,-10.35) {Challenger verified group\\updates Challenger LoRA};
+\draw[evidence] ([xshift=-40mm]barrier.south) -- (supdate.north);
+\draw[evidence] (barrier.south) -- (mupdate.north);
+\draw[evidence] ([xshift=40mm]barrier.south) -- (cupdate.north);
+
+\node[note, text width=105mm] at (0,-11.25) {The archive and promoted causal records become public in the next epoch\\Role gradients remain separate};
+
+\end{tikzpicture}
