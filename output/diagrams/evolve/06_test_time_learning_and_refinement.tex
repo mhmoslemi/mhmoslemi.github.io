@@ -1,0 +1,51 @@
+\begin{tikzpicture}[
+  x=1cm,
+  y=1cm,
+  font=\sffamily\scriptsize,
+  box/.style={draw, rounded corners=2pt, thick, align=center, minimum height=9mm, inner sep=3pt, fill=white},
+  frozen/.style={box, draw=black!60, fill=black!4},
+  role/.style={box, draw=teal!65!black, fill=teal!7},
+  branch/.style={box, draw=orange!75!black, fill=orange!8},
+  verify/.style={box, draw=green!55!black, fill=green!7},
+  gain/.style={box, draw=blue!65!black, fill=blue!6},
+  learning/.style={box, draw=cyan!60!black, fill=cyan!7},
+  refine/.style={box, draw=orange!85!black, fill=orange!13},
+  flow/.style={-{Latex[length=2mm]}, thick},
+  refineflow/.style={-{Latex[length=2mm]}, thick, draw=orange!80!black},
+  separate/.style={-{Latex[length=2mm]}, thick, dashed, draw=orange!80!black},
+  note/.style={font=\sffamily\tiny, align=center, text=black!70}
+]
+
+\node[frozen, text width=143mm, minimum height=12mm] at (0,1.20) {\textbf{One homogeneous group}\\same cell \quad role \quad option \quad harness \quad horizon \quad cost \quad checkpoint \quad record threshold};
+
+\node[role, text width=36mm] (snapshot) at (-5.1,0) {Frozen selected-role LoRA\\$\theta_a^e$};
+\node[branch, text width=36mm] (branches) at (0,0) {$N$ on-policy option branches\\from one frozen snapshot};
+\node[verify, text width=36mm] (verifier) at (5.1,0) {Independent verification\\completed branches only};
+\draw[flow] (snapshot) -- (branches);
+\draw[flow] (branches) -- (verifier);
+
+\node[gain, text width=36mm] (gains) at (5.1,-1.75) {Confirmed descendant gains\\$G_1,\ldots,G_N$};
+\node[learning, text width=40mm] (credit) at (0,-1.75) {Top-$m$-at-$K$ credit\\OrderGrad \quad MaxPO when $m=1$};
+\node[role, text width=38mm] (update) at (-5.1,-1.75) {Update selected-role LoRA\\for epoch $e+1$};
+\draw[flow] (verifier.south) -- (gains.north);
+\draw[flow] (gains.west) -- (credit.east);
+\draw[flow] (credit.west) -- (update.east);
+
+\node[frozen, text width=143mm, minimum height=12mm] at (0,-3.1) {\textbf{Only the selected-role LoRA updates}\\shared backbone fixed \quad other role LoRAs unchanged \quad no cross-role gradient \quad update after the group closes};
+
+\draw[dashed, thick, black!45] (-7.8,-3.90) -- (7.8,-3.90);
+\node[font=\sffamily\small\bfseries, anchor=west, text=orange!75!black] at (-7.2,-4.35) {Separate path for a provisional verifier outcome};
+
+\node[refine, text width=24mm, minimum height=13mm, inner sep=2pt] (diagnosis) at (-6.4,-5.4) {Actionable\\diagnosis};
+\node[refine, text width=24mm, minimum height=13mm, inner sep=2pt] (refinement) at (-3.2,-5.4) {Bounded refinement\\option\\1--3 attempts};
+\node[verify, text width=24mm, minimum height=13mm, inner sep=2pt] (reverify) at (0,-5.4) {Blinded\\re-verification};
+\node[gain, text width=24mm, minimum height=13mm, inner sep=2pt] (confirmed) at (3.2,-5.4) {Confirmed revised\\candidate};
+\node[refine, text width=24mm, minimum height=13mm, inner sep=2pt] (refinegroup) at (6.4,-5.4) {Separate refinement\\learning group};
+\draw[refineflow] (diagnosis) -- (refinement);
+\draw[refineflow] (refinement) -- (reverify);
+\draw[refineflow] (reverify) -- (confirmed);
+\draw[separate] (confirmed) -- (refinegroup);
+
+\node[note, draw=orange!65!black, rounded corners=1pt, fill=white] at (0,-6.85) {A refined candidate is not mixed into the original option group};
+
+\end{tikzpicture}

@@ -1,0 +1,37 @@
+\begin{tikzpicture}[
+  font=\sffamily\small,
+  node distance=5mm and 10mm,
+  box/.style={draw, rounded corners=2pt, very thick, align=center, minimum height=8mm, fill=white},
+  flow/.style={-{Latex[length=2mm]}, thick},
+  input/.style={box, draw=blue!65!black, fill=blue!5, minimum width=35mm},
+  control/.style={box, draw=violet!65!black, fill=violet!6, minimum width=47mm},
+  agent/.style={box, draw=teal!65!black, fill=teal!6, minimum width=66mm},
+  process/.style={box, draw=orange!70!black, fill=orange!7, minimum width=47mm},
+  verify/.style={box, draw=green!55!black, fill=green!7, minimum width=47mm},
+  update/.style={box, draw=red!60!black, fill=red!5, minimum width=34mm}
+]
+
+\node[input] (archive) {Verified scientific archive};
+\node[input, right=of archive] (harness) {Versioned harness pool};
+
+\node[control, below=of archive, xshift=22.5mm] (scheduler) {Posterior record-improvement scheduler};
+\node[agent, below=of scheduler] (agents) {One frozen backbone with three role-specific LoRAs\\Scout \quad Mechanist \quad Challenger};
+\node[process, below=of agents] (branches) {Independent multi-step option branches};
+\node[verify, below=of branches] (verifier) {Common independent verifier};
+
+\node[update, below left=of verifier, xshift=-13mm] (archiveupdate) {Archive and\\record update};
+\node[update, below=of verifier] (memory) {Causal option\\memory update};
+\node[update, below right=of verifier, xshift=13mm] (learning) {Role LoRA\\learning update};
+
+\draw[flow] (archive) -- (scheduler);
+\draw[flow] (harness) -- (scheduler);
+\draw[flow] (scheduler) -- (agents);
+\draw[flow] (agents) -- (branches);
+\draw[flow] (branches) -- (verifier);
+\draw[flow] (verifier) -- (archiveupdate);
+\draw[flow] (verifier) -- (memory);
+\draw[flow] (verifier) -- (learning);
+
+\node[font=\sffamily\footnotesize, below=3mm of memory] {Updates enter the next synchronized epoch};
+
+\end{tikzpicture}

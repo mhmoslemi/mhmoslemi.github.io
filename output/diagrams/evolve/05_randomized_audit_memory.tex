@@ -1,0 +1,82 @@
+\begin{tikzpicture}[
+  x=1cm,
+  y=1cm,
+  font=\sffamily\scriptsize,
+  box/.style={draw, rounded corners=2pt, thick, align=center, minimum height=8mm, inner sep=3pt, fill=white},
+  frozen/.style={box, draw=black!60, fill=black!4},
+  audit/.style={box, draw=violet!70!black, fill=violet!7},
+  verify/.style={box, draw=green!55!black, fill=green!7},
+  evidence/.style={box, draw=green!50!black, fill=green!5},
+  memory/.style={box, draw=blue!60!black, fill=blue!6},
+  flow/.style={-{Latex[length=2mm]}, thick},
+  auditflow/.style={-{Latex[length=2mm]}, thick, draw=violet!75!black},
+  promotion/.style={-{Latex[length=2mm]}, thick, dashed, draw=green!55!black},
+  note/.style={font=\sffamily\tiny, align=center, text=black!70}
+]
+
+\node[font=\sffamily\small\bfseries, anchor=west] at (-8.2,1.55) {A \quad Matched randomized audit};
+
+\node[frozen, text width=31mm, minimum height=14mm] (start) at (-6.60,-0.25) {Frozen start packet\\same cell and role checkpoint};
+\node[note, anchor=north] at ([yshift=-2mm]start.south) {same harness \quad horizon \quad cost \quad verifier};
+
+\node[audit, text width=25mm] (test) at (-3.00,0.35) {Test branch\\option $o$};
+\node[audit, text width=25mm] (control) at (-3.00,-0.85) {Control branch\\continuation $o_0$};
+\coordinate (assignmentfork) at (-4.65,-0.25);
+\draw[thick, draw=violet!75!black] (start.east) -- (assignmentfork);
+\fill[violet!75!black] (assignmentfork) circle (1pt);
+\draw[auditflow] (assignmentfork) |- (test.west);
+\draw[auditflow] (assignmentfork) |- (control.west);
+\node[note, fill=white, inner sep=1.5pt] at (-4.65,1.02) {random assignment};
+
+\node[verify, text width=20mm] (vtest) at (0,0.35) {Same verifier};
+\node[verify, text width=20mm] (vcontrol) at (0,-0.85) {Same verifier};
+\node[evidence, text width=20mm] (gtest) at (2.80,0.35) {Gain $G_H(o)$};
+\node[evidence, text width=20mm] (gcontrol) at (2.80,-0.85) {Gain $G_H(o_0)$};
+\draw[auditflow] (test) -- (vtest);
+\draw[auditflow] (control) -- (vcontrol);
+\draw[flow] (vtest) -- (gtest);
+\draw[flow] (vcontrol) -- (gcontrol);
+
+\node[audit, text width=35mm, minimum height=13mm] (effect) at (6.30,-0.25) {Paired branch effect\\$\Delta G=G_H(o)-G_H(o_0)$};
+\coordinate (effectmerge) at (4.05,-0.25);
+\draw[thick, draw=violet!75!black] (gtest.east) -- (4.05,0.35) -- (effectmerge);
+\draw[thick, draw=violet!75!black] (gcontrol.east) -- (4.05,-0.85) -- (effectmerge);
+\fill[violet!75!black] (effectmerge) circle (1pt);
+\draw[auditflow] (effectmerge) -- (effect.west);
+
+\draw[dashed, thick, black!45] (-8.2,-2.05) -- (8.2,-2.05);
+\node[font=\sffamily\small\bfseries, anchor=west] at (-8.2,-2.65) {B \quad Evidence promotion across repeated audit pairs};
+
+\node[evidence, text width=29mm] (blocks) at (-5.90,-3.75) {Closed audit blocks};
+\node[evidence, text width=39mm] (estimate) at (-1.80,-3.75) {Contextual effect estimate\\and confidence sequence};
+\node[memory, text width=34mm, minimum height=12mm] (decision) at (2.60,-3.75) {Repeated positive\\lower bound};
+\draw[flow] (blocks) -- (estimate);
+\draw[flow] (estimate) -- (decision);
+
+\node[frozen, text width=30mm] (more) at (0.20,-5.30) {Provisional evidence\\collect more audits};
+\node[memory, text width=32mm] (promoted) at (4.60,-5.30) {Promoted causal\\option record};
+\coordinate (evidencefork) at (2.60,-4.55);
+\draw[flow, -] (decision.south) -- (evidencefork);
+\draw[flow] (evidencefork) -| (more.north);
+\node[note, fill=white, inner sep=1pt] at (1.40,-4.70) {not yet};
+\draw[promotion] (evidencefork) -| (promoted.north);
+\node[note, fill=white, inner sep=1pt] at (3.60,-4.70) {supported};
+\fill[black!70] (evidencefork) circle (1pt);
+
+\node[memory, text width=39mm] (retrieval) at (4.60,-6.75) {Context-conditioned retrieval\\state \quad role \quad harness \quad horizon};
+\node[audit, text width=33mm, dashed] (nomemory) at (0.20,-6.75) {Randomized no-memory\\audit remains active};
+\draw[promotion] (promoted) -- (retrieval);
+\draw[auditflow] (more) -- (nomemory);
+
+\node[frozen, text width=155mm, minimum height=9mm] at (0,-8.15) {Production branches update scheduling \qquad randomized matched comparisons update causal option memory};
+
+\node[note,
+  draw=violet!50!black,
+  rounded corners=1pt,
+  fill=white,
+  text width=30mm,
+  anchor=south west]
+  at ([xshift=2mm,yshift=1mm]decision.north east)
+  {Each effect remains local\\to its audited context};
+
+\end{tikzpicture}
